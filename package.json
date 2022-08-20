@@ -1,0 +1,38 @@
+{
+  "name": "@taprootio/nunjucks-template-parser",
+  "version": "0.1.4",
+  "description": "Nunjucks template parser for rollup-plugin-taproot",
+  "main": "dist/nunjucks-template-parser.js",
+  "scripts": {
+    "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taprootio/nunjucks-template-parser.git"
+  },
+  "author": "Jereme Evans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taprootio/nunjucks-template-parser/issues"
+  },
+  "homepage": "https://github.com/taprootio/nunjucks-template-parser#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/nunjucks": "^3.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "eslint": "^8.22.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.0",
+    "rollup-plugin-summary": "^1.4.3",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "@taprootio/rollup-plugin-taproot": "^0.1.2",
+    "nunjucks": "^3.2.3"
+  }
+}
