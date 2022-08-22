@@ -1,30 +1,17 @@
 import { defineConfig } from "rollup"
 import typescript from "@rollup/plugin-typescript"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
-import commonjs from "@rollup/plugin-commonjs"
-import { terser } from "rollup-plugin-terser"
 import summary from "rollup-plugin-summary"
+import { builtinModules } from "module"
+import { dependencies } from "./package.json"
 
 export default defineConfig({
+  external: builtinModules.concat(Object.keys(dependencies)),
   input: "./src/nunjucks-template-parser.ts",
-  plugins: [
-    commonjs(),
-    nodeResolve(),
-    typescript(),
-    terser({
-      ecma: 2017,
-      module: true,
-      mangle: {
-        properties: {
-          regex: /^__/,
-        },
-      },
-    }),
-    summary(),
-  ],
+  plugins: [nodeResolve(), typescript(), summary()],
   output: {
-    dir: "dist",
+    format: "cjs",
+    file: "dist/nunjucks-template-parser.js",
     sourcemap: true,
-    entryFileNames: "[name].js",
   },
 })

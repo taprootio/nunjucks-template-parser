@@ -1,4 +1,4 @@
-import { TaprootTemplateParser } from "@taprootio/rollup-plugin-taproot/dist/models/TaprootTemplateParser"
+import { type TaprootTemplateParser } from "@taprootio/rollup-plugin-taproot/dist/models/TaprootTemplateParser"
 import nunjucks from "nunjucks"
 
 const NunjucksTemplateParser: TaprootTemplateParser = {
