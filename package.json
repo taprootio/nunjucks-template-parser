@@ -1,10 +1,11 @@
 {
   "name": "@taprootio/nunjucks-template-parser",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Nunjucks template parser for rollup-plugin-taproot",
   "main": "dist/nunjucks-template-parser.js",
   "scripts": {
     "build": "rimraf dist && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "push-yalc": "npm run build && yalc publish --store-folder /yalc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +22,9 @@
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {
-    "@taprootio/rollup-plugin-taproot": "^0.1.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.4",
+    "@taprootio/rollup-plugin-taproot": "^0.1.1",
     "@types/nunjucks": "^3.2.1",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
